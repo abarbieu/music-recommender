@@ -60,42 +60,43 @@ def region(gt):
         'British Indian Ocean Territory']
     if gt in oceania:
         return "Oceania and Nearby Territories"
+        #return "Not Europe"
 
     carribean = ['Dominican Republic','Antigua and Barbuda','Jamaica','Cuba',\
         'Saint Vincent and the Grenadines','Bermuda','Netherlands Antilles','Barbados',\
         'Dominica','Puerto Rico','Montserrat','Cayman Islands','Virgin Islands, British',\
         'Virgin Islands, U.s.','Trinidad and Tobago']
     if gt in carribean:
-        #return "Carribean and Nearby Territories"
+        return "Carribean and Nearby Territories"
         #return "North America"
-        return "Outside Europe"
+        #return "Outside Europe"
 
     north_am = ['United States','Canada']
     if gt in north_am:
-        #return "North America (Canada or US)"
+        return "North America (Canada or US)"
         #return "North America"
-        return "Outside Europe"
+        #return "Outside Europe"
 
     cent_am = ['Guatemala', 'Panama','Costa Rica','El Salvador','Mexico','Nicaragua','Honduras']
     if gt in cent_am:
-        #return "Central America (including Mexico)"
+        return "Central America (including Mexico)"
         #return "North America"
-        return "Outside Europe"
+        #return "Outside Europe"
 
     south_am = ['Uruguay','Argentina','Brazil','Chile','Peru','Colombia','Venezuela',\
         'Ecuador','Paraguay','Bolivia','Suriname',]
     if gt in south_am:
-        #return "South America"
-        return "Outside Europe"
+        return "South America"
+        #return "Outside Europe"
 
     asia = ['Korea, Republic of','Japan','Thailand','China','India','Singapore',\
         'Hong Kong','Malaysia','Taiwan','Philippines','Bangladesh','Viet Nam','Nepal',\
         'Indonesia','Kazakhstan', 'Afghanistan','Tajikistan','Maldives','Cambodia',\
         'Brunei Darussalam','Mongolia','Bhutan','Sri Lanka',]
     if gt in asia:
-        #return "East Asia"
+        return "East Asia"
         #return "Asia"
-        return "Outside Europe"
+        #return "Outside Europe"
 
     europe = ['Germany','United Kingdom','Finland','Portugal','Italy','Austria','Sweden',\
     'Greece','Netherlands','Ukraine','Russian Federation','Norway','Poland','Estonia',\
@@ -111,17 +112,17 @@ def region(gt):
         'Georgia','Saudi Arabia','Cyprus','Pakistan','Qatar','United Arab Emirates','Oman',\
         'Armenia','Lebanon',]
     if gt in west_asia:
-        #return "West Asia"
+        return "West Asia"
         #return "Asia"
-        return "Outside Europe"
+        #return "Outside Europe"
 
     africa = ['Ghana','Uganda','Togo','South Africa', 'Algeria', 'Djibouti','Egypt',\
         'Burkina Faso','Equatorial Guinea','Angola','Tunisia', 'Zimbabwe',\
         'Sao Tome and Principe','Congo, the Democratic Republic of the','Gambia','Nigeria',\
         'Morocco', 'Western Sahara','Lesotho','Chad','Cape Verde','Mauritius', 'Seychelles']
     if gt in africa:
-        #return "Africa"
-        return "Outside Europe"
+        return "Africa"
+        #return "Outside Europe"
     print(gt)
     
 
