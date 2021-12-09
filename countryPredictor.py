@@ -6,7 +6,7 @@ from operator import itemgetter
 import math
 import sys
 
-def knn(users, k):
+def knn(users, k, cfm, index_dict):
     correct = total = 0
     for u in users:
         usersCopy = users.copy()
@@ -26,7 +26,11 @@ def knn(users, k):
         if predict == gt:
             correct += 1
         total += 1
-    print("Overrall Accuracy: " + str(correct) + '/' + str(total) + ' = ' + str(correct/total))
+        cfm[gt][index_dict[predict]] += 1
+    print('  ' + str(cfm.keys()))
+    for row in cfm:
+        print(str(row) + ' ' + str(cfm[row]))
+    print("Overall Accuracy: " + str(correct) + '/' + str(total) + ' = ' + str(correct/total))
     return
             
 
@@ -54,21 +58,37 @@ def main():
     lastUser = 1
     lastCountry = None
     artist_list = np.zeros(count)
+    gt = []
     for _, r in data.iterrows():
         user = int(r[0])
         if user != lastUser:
-            users[lastUser] = (artist_list,lastCountry)
+            users[lastUser] = (artist_list,lastGT)
+            gt += [lastGT]
             #print(artist_list.count(1))
             artist_list = np.zeros(count)
             lastUser = user
-        lastCountry = r[3]
+        lastGT = r[3]
         artist = r[1]
         artist_list[artist_dict[artist]] = 1
+
+    gt = list(set(gt))
+    conf_mat = dict()
+    index_dict = dict()
+    index = 0
+    for g in gt:
+        index_dict[g] = index
+        index += 1
+        conf_mat[g] = [0]*len(gt)
     
-    knn(users, k)
+    knn(users, k, conf_mat, index_dict)
 
 
-    
+#ideas to improve:
+#make each country have equal numbers of users in users dict
+    #this will require a user object class
+#different distance/similarity measures
+#make regional predictor (maybe region by top language?)
+#make sex predictor?
 
 
 if __name__ == '__main__':
