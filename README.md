@@ -8,20 +8,19 @@
 
 ## Instructions 
 
-### pageRank.ipynb
-    contains code for pageRank.py in blocks for easy data manipulation and code needed to create graphics
+### Clustering.ipynb
+    A jupyter notebook that when ran produces the dendrogram of the top 200 artists by listeners on last.fm, 
+    clustered by user-generated tags.
     
-### pageRank_analysis.ipynb
-    uses pageRank.py to analyse runtime and create more graphics
+### countryPredictor.py
+    python3 countryPredictor.py <k-value>
+    Given a k-value for KNN, calculates the accuracy of predicting a user's country by the artists they listen to on last.fm.
 
-### pageRank.py
-    Usage1 python3 pageRank.py <datafile.>[csv/txt] <dataformat>[SNAP/SMALL] <d>[0-1] <epsilon>[~0.00001]
-
-    positional arguments:
-    datafile                .csv or .txt file with data in SNAP or SMALL format given by lab spec
-    dataformat                
-    optional arguments:
-    --output OUTPUT     file name for output; default is out.csv
-    --k K               k value for KNN; default is 10
-    --m {okapi,cosine}  similarity metric to be used, default is okapi
+### countryPredictor2.py
+    python3 countryPredictor2.py <k-value>
+    Same as above, but calculates the accuracy of predicting a user's location based on 9 regional buckets instead, and calculates
+    the confusion matrix and accuracy of the whole dataset based on the regional buckets, 
+    as well as the precision and recall for each bucket.
+### music-recommender.ipynb
+    A jupyter notebook using python3. Contains the implementation of our music recommender using collaborative filtering.
     
