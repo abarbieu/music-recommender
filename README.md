@@ -6,6 +6,12 @@
 3. Taylor Bedrosian - tbedrosi@calpoly.edu
 4. Zachary Krogman - zkrogman@calpoly.edu
 
+## Datasets:
+
+User Artist Scrobbles: https://www.kaggle.com/pcbreviglieri/lastfm-music-artist-scrobbles
+
+Artist Demographics and Popularity: https://www.kaggle.com/pieca111/music-artists-popularity
+
 ## Instructions 
 
 ### Clustering.ipynb
